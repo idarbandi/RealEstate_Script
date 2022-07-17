@@ -2,7 +2,7 @@ from abc import ABC
 
 from manager import Manager
 
-
+#base class is The Parent
 class baseclass(ABC):
     _id = 0
     objects_list = None

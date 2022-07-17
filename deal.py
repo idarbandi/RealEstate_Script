@@ -20,3 +20,7 @@ class rent(ABC):
         self.discountable = discountable
         super().__init__(*args,**kwargs)
 
+
+    def showPrice(self):
+        return f"youre looking at a {self.initial_price} property"
+

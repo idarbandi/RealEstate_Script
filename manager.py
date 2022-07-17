@@ -27,3 +27,6 @@ class Manager:
                     if result:
                         results.append(obj)
         return results
+
+    def counter(self):
+       return len(self._class.objects_list)

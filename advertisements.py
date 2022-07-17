@@ -4,7 +4,7 @@ from deal import rent,sell
 
 
 class apartmentsell(baseclass,apartment,sell):
-    def showdeatial(self):
+    def showdetail(self):
         self.show_description()
         self.showPrice()
 
@@ -20,16 +20,17 @@ class apartmentrent(baseclass,apartment,rent):
         return f"Following apartmnent is for rent with {self.initial_price} million"
 
 class houseSell(baseclass,house,sell):
-    def show_detail(self):
+    def showdetail(self):
         self.show_description()
-        self.show_price()
+        self.showPrice()
+
 
     def __str__(self):
         return f"Following House is for sale with {self.price_per_meter} million"
 
 
 class houseRent(baseclass,house,rent):
-    def show_detail(self):
+    def showdetail(self):
         self.show_description()
         # self.show_price()
 
