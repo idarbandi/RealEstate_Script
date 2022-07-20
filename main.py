@@ -45,6 +45,9 @@ class Handler:
             choice()
 
 
+"""Now You can Search 
+eather With One Argument Or Two"""
+
 if __name__ == "__main__":
     samples()
-    hamid = Handler().run()
+    print(apartmentsell.manager.search(area__max=500))

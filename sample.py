@@ -2,7 +2,8 @@ from advertisements import *
 from region import region
 from user import user
 from estate import apartment,house
-
+from rich.console import Console
+from rich import print
 
 
 
@@ -49,6 +50,7 @@ def samples():
     )
 
     print('#'*20,'samples Succesfully Imported','#'*20)
+
 
 
 
