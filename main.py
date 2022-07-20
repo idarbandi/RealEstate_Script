@@ -2,12 +2,12 @@ from sample import samples
 from advertisements import *
 
 
-
+#TODO:Search_By_Multiple_Values.For_Examle
+# : apartmentsell.manager.search(area__min=3,area__max=4)
 #We use handler to handle the imported Samples
 class Handler:
-
-
-
+    """handler Class has a RUN class_Func which
+    Initiates The Samples And Updates us About The Data"""
 
     advertisement_types = {
         1:apartmentrent,2:apartmentsell,
@@ -47,4 +47,4 @@ class Handler:
 
 if __name__ == "__main__":
     samples()
-    hamid = Handler().run()
+    print(apartmentsell.manager.search(area__min=500,area__max=600))

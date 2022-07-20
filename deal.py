@@ -6,7 +6,7 @@ class sell(ABC):
         self.price_per_meter = price_per_meter
         self.discountable = discountable
         self.convertable = convertable
-        super().__init__(*argigs,**kwargs)
+        super().__init__(*args,**kwargs)
 
     def showPrice(self):
         print(f"the Price is : {self.price_per_meter}/t discount is {self.discountable}")

@@ -2,10 +2,12 @@ class Manager:
     def __init__(self , _class=None):
         self._class = _class
 
+    def search(self, **kwargs):
 
-    def search(self,**kwargs):
         results = list()
+        objects = self._class.objects_list
         for key, value in kwargs.items():
+
             if key.endswith('__min'):
                 key = key[:-5]
                 compare_key = 'min'
@@ -15,18 +17,24 @@ class Manager:
             else:
                 compare_key = 'equal'
 
-            for obj in self._class.objects_list:
+            if results:
+                objects.clear()
+                for obj in results:
+                    objects.append(obj)
+                results.clear()
+
+            for obj in objects:
                 if hasattr(obj, key):
                     if compare_key == 'min':
-                        result = bool(getattr(obj, key) >= value)
+                        result = getattr(obj, key) >= value
                     elif compare_key == 'max':
-                        result = bool(getattr(obj, key) <= value)
+                        result = getattr(obj, key) <= value
                     else:
-                        result = bool(getattr(obj, key) == value)
-
+                        result = getattr(obj, key) == value
                     if result:
                         results.append(obj)
         return results
+
 
     def counter(self):
        return len(self._class.objects_list)
